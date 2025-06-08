@@ -1,7 +1,7 @@
 class Solution {
     public int minDays(int[] bloomDay, int m, int k) {
-        long n = bloomDay.length;
-        long z = m*k;
+        int n = bloomDay.length;
+        int z = m*k;
         if(n < z){
             return -1;
         }
