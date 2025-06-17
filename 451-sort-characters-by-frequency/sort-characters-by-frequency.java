@@ -1,5 +1,3 @@
-import java.util.*;
-
 class Solution {
     public String frequencySort(String s) {
         Map<Character, Integer> freqMap = new HashMap<>();
@@ -7,19 +5,18 @@ class Solution {
             freqMap.put(c, freqMap.getOrDefault(c, 0) + 1);
         }
 
-        PriorityQueue<Map.Entry<Character, Integer>> maxHeap =
-                new PriorityQueue<>((a, b) -> b.getValue() - a.getValue());
+        List<Character> charList = new ArrayList<>(s.length());
+        for (char c : freqMap.keySet()) {
+            for (int i = 0; i < freqMap.get(c); i++) {
+                charList.add(c);
+            }
+        }
 
-        maxHeap.addAll(freqMap.entrySet());
+        charList.sort((a, b) -> freqMap.get(b) - freqMap.get(a));
 
         StringBuilder result = new StringBuilder();
-        while (!maxHeap.isEmpty()) {
-            Map.Entry<Character, Integer> entry = maxHeap.poll();
-            char ch = entry.getKey();
-            int freq = entry.getValue();
-            for (int i = 0; i < freq; i++) {
-                result.append(ch);
-            }
+        for (char c : charList) {
+            result.append(c);
         }
 
         return result.toString();
