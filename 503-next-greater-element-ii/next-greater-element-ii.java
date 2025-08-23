@@ -9,12 +9,6 @@ class Solution {
         for(int i = 0; i < n; i++){
             int a = nums[i];
             int j = i;
-            // while(j < 2*n){
-            //     if(arr[j] == a){
-            //         break;
-            //     }
-            //     j++;
-            // }
             for(int k = j+1; k < 2*n; k++){
                 if(arr[k] > a){
                     a = arr[k];
