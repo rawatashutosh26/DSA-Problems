@@ -14,29 +14,5 @@ class Solution {
             b = Math.max(b, a+c);
         }
         return b;
-        // int a = 0;
-        // int b = 0;
-        // while(i < n && j >= 0 && a < k){
-        //     if(cardPoints[i] < cardPoints[j]){
-        //         b += cardPoints[j];
-        //         a++;
-        //         j--;
-        //     }else if(cardPoints[i] == cardPoints[j]){
-        //         if(cardPoints[i+1] < cardPoints[j-1]){
-        //             b += cardPoints[j];
-        //             a++;
-        //             j--;
-        //         }else{
-        //             b += cardPoints[i];
-        //             a++;
-        //             i++;
-        //         }
-        //     }else{
-        //        b += cardPoints[i];
-        //         a++;
-        //         i++; 
-        //     }
-        // }
-        // return b;
     }
 }
